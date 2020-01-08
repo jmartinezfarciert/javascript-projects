@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Cal Lottery Expected Value Calculator</title>
+
+    <script type="text/javascript">
+      function process() {
+        // initialize the variables
+        var one = document.getElementById("1").value;
+        var two = document.getElementById("2").value;
+        var three = document.getElementById("3").value;
+        var four = document.getElementById("4").value;
+        var five = 111;
+        var six = 6;
+        var seven = 6;
+        var eight = 4;
+        var nine = 3;
+
+        ev = (one * (1/292201338))
+        + (two * (1/11688054))
+        + (three * (1/913130))
+        + (four * (1/36526))
+        + (five * (1/14495))
+        + (six * (1/580))
+        + (seven * (1/702))
+        + (eight * (1/92))
+        + (nine * (1/39))
+        // set results to target textarea tag
+        results = document.getElementById("results");
+        results.value = "The Expected Value is : \n" + ev;
+      }
+
+      function superlotto() {
+        var a = document.getElementById("a").value;
+        ev = (a * (1/41416353))
+        + (33208 * (1/1592937))
+        + (2372 * (1/197221))
+        + (120 * (1/7585))
+        + (60 * (1/4810))
+        + (11 * (1/185))
+        + (11 * (1/361))
+        + (2 * (1/74))
+        + (1 * (1/49))
+
+        sl = document.getElementById("sl");
+        sl.value = "The Expected Value is : \n" + ev;
+      }
+    </script>
+  </head>
+  <body>
+    <article class="">
+      <table>
+        <th> PowerBall</th>
+        <tr>
+          <td> Jackpot : </td>
+          <td><input type="number" id="1" autofocus></td>
+        </tr>
+        <tr>
+          <td> Second prize : </td>
+          <td><input type="number" id="2"></td>
+        </tr>
+        <tr>
+          <td> Third prize : </td>
+          <td><input type="number" id="3"></td>
+        </tr>
+        <tr>
+        <tr>
+          <td> Fourth prize : </td>
+          <td><input type="number" id="4"></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" onclick="process()" value="Calculate">
+            <input type="reset" value="Clear">
+          </td>
+        <tr>
+          <td> Results : </td>
+          <td><textarea id="results" rows="2" cols="25" readonly></textarea></td>
+        </tr>
+      </table>
+
+      <table>
+        <th> Super Lotto </th>
+        <tr>
+          <td> Jackpot : </td>
+          <td><input type="number" id="a" autofocus></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" onclick="superlotto()" value="Calculate">
+            <input type="reset" value="Clear">
+          </td>
+        <tr>
+          <td> Results : </td>
+          <td><textarea id="sl" rows="2" cols="25" readonly></textarea></td>
+        </tr>
+      </table>
+
+
+    </article>
+  </body>
+</html>
