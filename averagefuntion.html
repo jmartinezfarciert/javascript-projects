@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> javascript functions with integers</title>
+
+    <script type="text/javascript">
+      function process() {
+        var int1;
+        var int2;
+        var int2;
+        var avg;
+        var min;
+        var max;
+
+        // initialize the variables
+        int1 = document.getElementById("int1").value;
+        int2 = document.getElementById("int2").value;
+        int3 = document.getElementById("int3").value;
+
+        // set results to target textarea tag
+        results = document.getElementById("results");
+        int1=parseInt(int1);
+        int2=parseInt(int2);
+        int3=parseInt(int3);
+
+        avg = ((int1+int2+int3)/3).toFixed(3);
+        min = Math.min(int1, int2, int3);
+        max = Math.min(int1, int2, int3);
+
+        results.value = "The sum of entered integers : " + (int1 + int2 + int3)
+        + "\nThe average of the integers : " + avg
+        + "\nThe product of the integers : " + (int1 * int2 * int3)
+        + "\nThe largest of the integers : " + max
+        + "\nThe smallest of the integers : " + min;
+      }
+    </script>
+  </head>
+  <body>
+    <article class="">
+      <table>
+        <tr>
+          <td> First Integer : </td>
+          <td><input type="number" id="int1" autofocus></td>
+        </tr>
+        <tr>
+          <td> Second Integer : </td>
+          <td><input type="number" id="int2"></td>
+        </tr>
+        <tr>
+          <td> Third Integer : </td>
+          <td><input type="number" id="int3"></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" onclick="process()" value="Calculate">
+            <input type="reset" value="Clear">
+          </td>
+        <tr>
+          <td> Results : </td>
+          <td><textarea id="results" rows="5" cols="40" readonly></textarea></td>
+        </tr>
+      </table>
+    </article>
+  </body>
+</html>
